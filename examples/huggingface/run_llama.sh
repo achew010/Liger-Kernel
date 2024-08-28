@@ -1,8 +1,8 @@
 torchrun --nnodes=1 --nproc-per-node=4 training.py \
     --bf16 \
     --num_train_epochs 1 \
-    --per_device_train_batch_size 64 \
-    --per_device_eval_batch_size 64 \
+    --per_device_train_batch_size 48 \
+    --per_device_eval_batch_size 48 \
     --eval_strategy "no" \
     --save_strategy "no" \
     --learning_rate 6e-6 \
@@ -16,4 +16,5 @@ torchrun --nnodes=1 --nproc-per-node=4 training.py \
     --fsdp_config config/fsdp_config.json \
     --seed 42 \
     --use_liger True \
+    --use_foak False \
     --output_dir alpaca_finetuning
